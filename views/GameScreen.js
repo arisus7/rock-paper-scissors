@@ -66,7 +66,7 @@ export default function GameScreen() {
       </Text>
 
       <Text style={styles.result}>
-        Computadora: {computerChoice}
+        CPU: {computerChoice}
       </Text>
 
       <Text style={styles.result}>
@@ -80,16 +80,16 @@ export default function GameScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   title: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#000000',
-    marginBottom: 20,
+    color: '#5e2eb1',
+    marginBottom: 10,
   },
 
   subtitle: {
@@ -98,18 +98,18 @@ const styles = StyleSheet.create({
   },
 
   score: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: 10,
   },
 
   buttons: {
-    gap: 10,
-    marginTop: 20,
+    gap: 2,
+    marginTop: 5,
   },
 
   result: {
-    fontSize: 16,
+    fontSize: 20,
     marginTop: 5,
   },
 });

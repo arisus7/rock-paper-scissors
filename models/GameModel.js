@@ -1,3 +1,5 @@
+import ChoiceVO from "../valueobjects/ChoiceVO";
+
 class GameModel {
     constructor() {
         this.playerChoice = null;
@@ -8,41 +10,32 @@ class GameModel {
     }
 
     play(playerChoice) {
-        this.playerChoice = playerChoice; //THIS es el lugar donde nuestro juego guarda la elección del jugador
-            const choices = ["Piedra", "Papel", "Tijera"];
-            const randomNumber = Math.floor(Math.random() * 3) + 1;
+        this.playerChoice = new ChoiceVO(playerChoice).value;
 
-    if (randomNumber === 1) {
-        this.computerChoice = "Piedra";}
+        const randomNumber = Math.floor(Math.random() * 3) + 1;
 
-         else if (randomNumber === 2) {
-        this.computerChoice = "Papel";}
-
-         else {
-        this.computerChoice = "Tijera";
+        if (randomNumber === 1) {
+            this.computerChoice = "Piedra";
+        } else if (randomNumber === 2) {
+            this.computerChoice = "Papel";
+        } else {
+            this.computerChoice = "Tijera";
         }
 
         if (this.playerChoice === this.computerChoice) {
-        this.result = "Empate";
-        }
-
-        else if (
+            this.result = "Empate";
+        } else if (
             (this.playerChoice === "Piedra" && this.computerChoice === "Tijera") ||
             (this.playerChoice === "Papel" && this.computerChoice === "Piedra") ||
             (this.playerChoice === "Tijera" && this.computerChoice === "Papel")
-            ) {
+        ) {
             this.result = "Ganaste";
             this.playerScore++;
-        }
-        else {
+        } else {
             this.result = "Perdiste";
             this.computerScore++;
         }
-
     }
-
-
 }
-
 
 export default GameModel;
