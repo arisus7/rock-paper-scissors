@@ -6,10 +6,12 @@ import GameController from '../controllers/GameController';
 export default function GameScreen() {
 
   const controller = useRef(new GameController()).current;
-
   const [playerChoice, setPlayerChoice] = useState('');
   const [computerChoice, setComputerChoice] = useState('');
   const [result, setResult] = useState('');
+
+  const [playerScore, setPlayerScore] = useState(0);
+  const [computerScore, setComputerScore] = useState(0);
 
   const handleChoice = (choice) => {
     const gameResult = controller.play(choice);
@@ -17,6 +19,9 @@ export default function GameScreen() {
     setPlayerChoice(gameResult.playerChoice);
     setComputerChoice(gameResult.computerChoice);
     setResult(gameResult.result);
+
+    setPlayerScore(gameResult.playerScore);
+    setComputerScore(gameResult.computerScore);
   };
 
   return (
@@ -27,7 +32,7 @@ export default function GameScreen() {
       </Text>
 
       <Text style={styles.score}>
-        Tú  0 - 0  CPU
+        Tú  {playerScore} - {computerScore} CPU
       </Text>
 
       <Text style={styles.subtitle}>

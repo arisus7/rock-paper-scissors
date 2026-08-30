@@ -11,7 +11,9 @@ class GameController {
         return {
         playerChoice: this.gameModel.playerChoice,
         computerChoice: this.gameModel.computerChoice,
-        result: this.gameModel.result
+        result: this.gameModel.result,
+        playerScore: this.gameModel.playerScore,
+        computerScore: this.gameModel.computerScore,
         };
     }
 }
