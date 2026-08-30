@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ChoiceButton from '../components/ChoiceButton';
 import GameController from '../controllers/GameController';
 
 export default function GameScreen() {
 
-  const controller = new GameController();
+  const controller = useRef(new GameController()).current;
 
   const [playerChoice, setPlayerChoice] = useState('');
   const [computerChoice, setComputerChoice] = useState('');
