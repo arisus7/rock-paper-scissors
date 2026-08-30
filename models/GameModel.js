@@ -3,12 +3,14 @@ class GameModel {
         this.playerChoice = null;
         this.computerChoice = null;
         this.result = null;
+        this.playerScore = 0;
+        this.computerScore = 0;
     }
 
     play(playerChoice) {
         this.playerChoice = playerChoice; //THIS es el lugar donde nuestro juego guarda la elección del jugador
-    const choices = ["Piedra", "Papel", "Tijera"];
-    const randomNumber = Math.floor(Math.random() * 3) + 1;
+            const choices = ["Piedra", "Papel", "Tijera"];
+            const randomNumber = Math.floor(Math.random() * 3) + 1;
 
     if (randomNumber === 1) {
         this.computerChoice = "Piedra";}
@@ -30,9 +32,11 @@ class GameModel {
             (this.playerChoice === "Tijera" && this.computerChoice === "Papel")
             ) {
             this.result = "Ganaste";
+            this.playerScore++;
         }
         else {
             this.result = "Perdiste";
+            this.computerScore++;
         }
 
     }
